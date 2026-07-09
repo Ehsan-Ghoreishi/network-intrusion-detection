@@ -1,0 +1,33 @@
+{
+  "overall_accuracy": 0.9774,
+  "attack_detection_rate": 0.9939,
+  "false_alarm_rate": 0.0364,
+  "per_class": {
+    "normal": {
+      "precision": 0.994,
+      "recall": 0.964,
+      "f1": 0.979
+    },
+    "dos": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "probe": {
+      "precision": 0.999,
+      "recall": 1.0,
+      "f1": 0.999
+    },
+    "r2l": {
+      "precision": 0.793,
+      "recall": 0.92,
+      "f1": 0.852
+    },
+    "u2r": {
+      "precision": 0.496,
+      "recall": 0.984,
+      "f1": 0.66
+    }
+  },
+  "epochs_trained": 28
+}

@@ -1,0 +1,8 @@
+{
+  "roc_auc": 0.9937,
+  "threshold": 1.088,
+  "attack_detection_rate": 0.9773,
+  "false_alarm_rate": 0.0501,
+  "mean_error_normal": 0.4957,
+  "mean_error_attack": 23.2369
+}
