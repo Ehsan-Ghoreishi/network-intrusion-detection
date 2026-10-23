@@ -1,0 +1,192 @@
+{
+  "logistic_regression": {
+    "test_multiclass": {
+      "accuracy": 0.7631,
+      "macro_f1": 0.5705,
+      "per_class": {
+        "normal": {
+          "precision": 0.6993,
+          "recall": 0.9052,
+          "f1": 0.789,
+          "support": 9711
+        },
+        "dos": {
+          "precision": 0.9619,
+          "recall": 0.7966,
+          "f1": 0.8715,
+          "support": 7458
+        },
+        "probe": {
+          "precision": 0.6685,
+          "recall": 0.7823,
+          "f1": 0.721,
+          "support": 2421
+        },
+        "r2l": {
+          "precision": 0.7141,
+          "recall": 0.1986,
+          "f1": 0.3108,
+          "support": 2754
+        },
+        "u2r": {
+          "precision": 0.1608,
+          "recall": 0.16,
+          "f1": 0.1604,
+          "support": 200
+        }
+      },
+      "confusion_matrix": [
+        [
+          8790,
+          74,
+          716,
+          74,
+          57
+        ],
+        [
+          1289,
+          5941,
+          132,
+          12,
+          84
+        ],
+        [
+          256,
+          159,
+          1894,
+          110,
+          2
+        ],
+        [
+          2092,
+          0,
+          91,
+          547,
+          24
+        ],
+        [
+          143,
+          2,
+          0,
+          23,
+          32
+        ]
+      ]
+    },
+    "test_binary": {
+      "detection_rate": 0.7054,
+      "false_alarm_rate": 0.0948,
+      "precision": 0.9077,
+      "f1": 0.7939,
+      "accuracy": 0.7915,
+      "roc_auc": 0.9249,
+      "pr_auc": 0.9173
+    },
+    "test_breakdown": {
+      "by_family": {
+        "dos": 0.8272,
+        "probe": 0.8943,
+        "r2l": 0.2404,
+        "u2r": 0.285
+      },
+      "seen_attack_types": 0.8157,
+      "unseen_attack_types": 0.4384,
+      "n_unseen": 3750
+    }
+  },
+  "random_forest": {
+    "test_multiclass": {
+      "accuracy": 0.7367,
+      "macro_f1": 0.4703,
+      "per_class": {
+        "normal": {
+          "precision": 0.6341,
+          "recall": 0.9738,
+          "f1": 0.7681,
+          "support": 9711
+        },
+        "dos": {
+          "precision": 0.9612,
+          "recall": 0.7636,
+          "f1": 0.8511,
+          "support": 7458
+        },
+        "probe": {
+          "precision": 0.8561,
+          "recall": 0.5948,
+          "f1": 0.7019,
+          "support": 2421
+        },
+        "r2l": {
+          "precision": 0.8333,
+          "recall": 0.0054,
+          "f1": 0.0108,
+          "support": 2754
+        },
+        "u2r": {
+          "precision": 0.5,
+          "recall": 0.01,
+          "f1": 0.0196,
+          "support": 200
+        }
+      },
+      "confusion_matrix": [
+        [
+          9457,
+          67,
+          186,
+          0,
+          1
+        ],
+        [
+          1710,
+          5695,
+          53,
+          0,
+          0
+        ],
+        [
+          818,
+          163,
+          1440,
+          0,
+          0
+        ],
+        [
+          2736,
+          0,
+          2,
+          15,
+          1
+        ],
+        [
+          194,
+          0,
+          1,
+          3,
+          2
+        ]
+      ]
+    },
+    "test_binary": {
+      "detection_rate": 0.5747,
+      "false_alarm_rate": 0.0262,
+      "precision": 0.9667,
+      "f1": 0.7208,
+      "accuracy": 0.7466,
+      "roc_auc": 0.9591,
+      "pr_auc": 0.9626
+    },
+    "test_breakdown": {
+      "by_family": {
+        "dos": 0.7707,
+        "probe": 0.6621,
+        "r2l": 0.0065,
+        "u2r": 0.03
+      },
+      "seen_attack_types": 0.7538,
+      "unseen_attack_types": 0.1408,
+      "n_unseen": 3750
+    }
+  }
+}

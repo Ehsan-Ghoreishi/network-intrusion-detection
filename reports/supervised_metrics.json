@@ -1,33 +1,98 @@
 {
-  "overall_accuracy": 0.9774,
-  "attack_detection_rate": 0.9939,
-  "false_alarm_rate": 0.0364,
-  "per_class": {
-    "normal": {
-      "precision": 0.994,
-      "recall": 0.964,
-      "f1": 0.979
+  "model": "supervised_nn",
+  "epochs_trained": 40,
+  "validation": 0.9913,
+  "test_multiclass": {
+    "accuracy": 0.8073,
+    "macro_f1": 0.6623,
+    "per_class": {
+      "normal": {
+        "precision": 0.7393,
+        "recall": 0.9232,
+        "f1": 0.8211,
+        "support": 9711
+      },
+      "dos": {
+        "precision": 0.9685,
+        "recall": 0.8211,
+        "f1": 0.8888,
+        "support": 7458
+      },
+      "probe": {
+        "precision": 0.7043,
+        "recall": 0.7662,
+        "f1": 0.7339,
+        "support": 2421
+      },
+      "r2l": {
+        "precision": 0.8726,
+        "recall": 0.4426,
+        "f1": 0.5873,
+        "support": 2754
+      },
+      "u2r": {
+        "precision": 0.5781,
+        "recall": 0.185,
+        "f1": 0.2803,
+        "support": 200
+      }
     },
-    "dos": {
-      "precision": 1.0,
-      "recall": 1.0,
-      "f1": 1.0
-    },
-    "probe": {
-      "precision": 0.999,
-      "recall": 1.0,
-      "f1": 0.999
-    },
-    "r2l": {
-      "precision": 0.793,
-      "recall": 0.92,
-      "f1": 0.852
-    },
-    "u2r": {
-      "precision": 0.496,
-      "recall": 0.984,
-      "f1": 0.66
-    }
+    "confusion_matrix": [
+      [
+        8965,
+        69,
+        649,
+        10,
+        18
+      ],
+      [
+        1218,
+        6124,
+        111,
+        4,
+        1
+      ],
+      [
+        285,
+        128,
+        1855,
+        153,
+        0
+      ],
+      [
+        1522,
+        0,
+        5,
+        1219,
+        8
+      ],
+      [
+        136,
+        2,
+        14,
+        11,
+        37
+      ]
+    ]
   },
-  "epochs_trained": 28
+  "test_binary": {
+    "detection_rate": 0.7537,
+    "false_alarm_rate": 0.0768,
+    "precision": 0.9284,
+    "f1": 0.832,
+    "accuracy": 0.8267,
+    "roc_auc": 0.9554,
+    "pr_auc": 0.9569
+  },
+  "test_breakdown": {
+    "by_family": {
+      "dos": 0.8367,
+      "probe": 0.8823,
+      "r2l": 0.4473,
+      "u2r": 0.32
+    },
+    "seen_attack_types": 0.8896,
+    "unseen_attack_types": 0.4245,
+    "n_unseen": 3750
+  }
 }

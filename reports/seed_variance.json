@@ -1,0 +1,73 @@
+{
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "supervised_nn": {
+    "accuracy": {
+      "mean": 0.7752,
+      "std": 0.0191,
+      "min": 0.7513,
+      "max": 0.8022
+    },
+    "macro_f1": {
+      "mean": 0.6062,
+      "std": 0.0443,
+      "min": 0.5627,
+      "max": 0.6646
+    },
+    "detection_rate": {
+      "mean": 0.7079,
+      "std": 0.0309,
+      "min": 0.6768,
+      "max": 0.7421
+    },
+    "false_alarm_rate": {
+      "mean": 0.0787,
+      "std": 0.0054,
+      "min": 0.0733,
+      "max": 0.0852
+    },
+    "roc_auc": {
+      "mean": 0.933,
+      "std": 0.0155,
+      "min": 0.9075,
+      "max": 0.9476
+    },
+    "unseen_attack_types": {
+      "mean": 0.3621,
+      "std": 0.0441,
+      "min": 0.2888,
+      "max": 0.3989
+    }
+  },
+  "autoencoder": {
+    "detection_rate": {
+      "mean": 0.8209,
+      "std": 0.0288,
+      "min": 0.7841,
+      "max": 0.8594
+    },
+    "false_alarm_rate": {
+      "mean": 0.0538,
+      "std": 0.0024,
+      "min": 0.0512,
+      "max": 0.0574
+    },
+    "roc_auc": {
+      "mean": 0.9698,
+      "std": 0.004,
+      "min": 0.9661,
+      "max": 0.9762
+    },
+    "unseen_attack_types": {
+      "mean": 0.7883,
+      "std": 0.0041,
+      "min": 0.7829,
+      "max": 0.7939
+    }
+  }
+}
