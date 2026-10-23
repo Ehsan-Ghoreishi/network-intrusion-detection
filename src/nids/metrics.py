@@ -55,6 +55,27 @@ def multiclass_metrics(y_true, y_pred, classes: list[str]) -> dict:
     }
 
 
+def attack_breakdown(df, flagged, seen_labels: set[str]) -> dict:
+    """Detection rate per attack family, and for attack types seen vs unseen in training.
+
+    The "unseen" group is the closest NSL-KDD gets to measuring zero-day
+    performance: 17 attack types in KDDTest+ never appear in KDDTrain+.
+    """
+    flagged = np.asarray(flagged).astype(bool)
+    attacks = df["is_attack"].to_numpy() == 1
+    unseen = ~df["label"].isin(seen_labels).to_numpy() & attacks
+    out = {
+        "by_family": {
+            fam: round(float(flagged[(df["category"] == fam).to_numpy()].mean()), 4)
+            for fam in sorted(df.loc[attacks, "category"].unique())
+        },
+        "seen_attack_types": round(float(flagged[attacks & ~unseen].mean()), 4),
+        "unseen_attack_types": round(float(flagged[unseen].mean()), 4) if unseen.any() else None,
+        "n_unseen": int(unseen.sum()),
+    }
+    return out
+
+
 def threshold_at_fpr(normal_scores: np.ndarray, target_fpr: float) -> float:
     """Score threshold that flags ``target_fpr`` of known-normal traffic."""
     if not 0 < target_fpr < 1:

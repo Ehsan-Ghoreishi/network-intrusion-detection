@@ -1,7 +1,8 @@
 import numpy as np
+import pandas as pd
 import pytest
 
-from nids.metrics import binary_metrics, multiclass_metrics, threshold_at_fpr
+from nids.metrics import attack_breakdown, binary_metrics, multiclass_metrics, threshold_at_fpr
 
 
 def test_binary_metrics_hand_computed():
@@ -35,3 +36,16 @@ def test_threshold_at_fpr():
 def test_threshold_rejects_bad_fpr(bad):
     with pytest.raises(ValueError):
         threshold_at_fpr(np.ones(10), bad)
+
+
+def test_attack_breakdown_splits_seen_and_unseen():
+    df = pd.DataFrame({
+        "label": ["normal", "neptune", "neptune", "mailbomb", "mailbomb"],
+        "category": ["normal", "dos", "dos", "dos", "dos"],
+        "is_attack": [0, 1, 1, 1, 1],
+    })
+    out = attack_breakdown(df, [1, 1, 1, 1, 0], seen_labels={"normal", "neptune"})
+    assert out["seen_attack_types"] == 1.0
+    assert out["unseen_attack_types"] == 0.5
+    assert out["n_unseen"] == 2
+    assert out["by_family"] == {"dos": 0.75}
