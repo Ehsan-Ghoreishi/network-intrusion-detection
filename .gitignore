@@ -1,8 +1,18 @@
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+
+# Tooling
+.pytest_cache/
+.ruff_cache/
 .ipynb_checkpoints/
 .DS_Store
-data/network_traffic.csv
-reports/*.keras
-reports/history.npy
-reports/recon_errors.npz
+
+# Downloaded data and trained artifacts (reproduce with `make all`)
+data/
+models/
